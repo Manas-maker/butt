@@ -9,6 +9,11 @@ body {
     left: 10px;
     top: 10px;
 }
+#miku {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
 button {
     border-style:outset solid;
     border-width:3px;
@@ -147,5 +152,11 @@ button:active {
         position: absolute;
         top: -90px;
         left: -70px;
+    }
+    #miku {
+        scale: 0.5;
+        position: absolute;
+        bottom: -10px;
+        left: 30px;
     }
 }
