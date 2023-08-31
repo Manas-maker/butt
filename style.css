@@ -1,16 +1,24 @@
-html {
+body {
+    background-image: url("knuckles_desk.jpg");
+    background-size: cover;
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding-top: 30vh;
+}
+#aud-icon {
+    position: absolute;
+    left: 10px;
+    top: 10px;
 }
 button {
     border-style:outset solid;
     border-width:3px;
     border-radius: 3px;
+    height: 120px;
+    width: 240px;
     background-color: #d01f10;
     border-color:black;
     font-weight: 900;
+    margin:auto 0;
     font-size: larger;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -19,21 +27,125 @@ button:active {
     border-style: inset;
 }
 
-#cont {
+#grid-cont {
+    display: grid;
+    width: 50vw;
+    justify-content: center;
+    align-items: center;
+}
+#butt-cont {
+    grid-column: 2/ 3;
+    grid-row:2/ 3;
     background-color: black;
     border-style: outset solid;
     border-radius: 5px;
-    height: 50px;
-    width: 120px;
+    height: 120px;
+    width: 240px;
     padding: 10px;
+    margin: 50px 0px;
 }
+.bottom.left{
+    grid-column: 1/ 2;
+    grid-row: 3/ 4;
+    animation: arrowAnimation3 1s infinite ease-in-out;
+}
+
+@keyframes arrowAnimation3 {
+    0% {
+        transform: translateY(0) translateX(0) rotate(-90deg);
+    }
+    50% {
+        transform: translateY(20px) translateX(-20px) rotate(-90deg);
+    }
+
+    100% {
+        transform: translateY(40px) translateY(-40px) rotate(-90deg);
+    }
+}
+.bottom.right{
+    transform: rotate(90deg);
+    grid-column: 3/ 4;
+    grid-row: 3/ 4;
+    animation: arrowAnimation4 1s infinite ease-in-out;
+}
+
+@keyframes arrowAnimation4 {
+    0% {
+        transform: translateY(0) translateX(0) rotate(90deg);
+    }
+    50% {
+        transform: translateY(20px) translateX(20px) rotate(90deg);
+    }
+
+    100% {
+        transform: translateY(40px) translateY(-40px) rotate(90deg);
+    }
+}
+
+.top.left{
+    grid-column: 1/ 2;
+    grid-row: 1/ 2;
+    animation: arrowAnimation1 1s infinite ease-in-out;
+}
+@keyframes arrowAnimation1 {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    50% {
+        transform: translateY(-20px) translateX(-20px);
+    }
+
+    100% {
+        transform: translateY(-40px) translateY(40px);
+    }
+}
+.top.right {
+    grid-column: 3/ 4;
+    grid-row: 1/ 2;
+    animation: arrowAnimation2 1s infinite ease-in-out;
+}
+
+@keyframes arrowAnimation2 {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    50% {
+        transform: translateY(-20px) translateX(20px);
+    }
+
+    100% {
+        transform: translateY(-40px) translateY(40px);
+    }
+}
+
 @media screen and (max-width:768px) {
-    #cont {
+    body {
+        background-image: url("knuckles_mob.webp");
+        background-size: cover;
+    }
+    #butt-cont {
+        height: 20vh;
+        width: 40vw;
+        margin: 0px;
+        grid-row: 1/ 4;
+    }
+    #grid-cont {
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    button {
         height: 20vh;
         width: 40vw;
     }
-    button {
-        height: 18vh;
-        width: 38vw;
+    .arrow {
+        display: none;
+    }
+
+    #aud-icon {
+        scale: 0.4;
+        position: absolute;
+        top: -90px;
+        left: -70px;
     }
 }
